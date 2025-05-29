@@ -3,5 +3,10 @@
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "astro"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#113425",
+    "titleBar.activeBackground": "#174934",
+    "titleBar.activeForeground": "#F4FBF8"
   }
 }

@@ -1,94 +1,133 @@
-# 10x Astro Starter
+# 10x-astro-ai-training
 
-A modern, opinionated starter template for building fast, accessible, and AI-friendly web applications.
+## Table of Contents
+1. [Project Name](#project-name)
+2. [Project Description](#project-description)
+3. [Tech Stack](#tech-stack)
+4. [Getting Started Locally](#getting-started-locally)
+5. [Available Scripts](#available-scripts)
+6. [Project Scope](#project-scope)
+7. [Project Status](#project-status)
+8. [License](#license)
 
-## Tech Stack
+## 1. Project Name
+`10x-astro-ai-training`
 
-- [Astro](https://astro.build/) v5.5.5 - Modern web framework for building fast, content-focused websites
-- [React](https://react.dev/) v19.0.0 - UI library for building interactive components
-- [TypeScript](https://www.typescriptlang.org/) v5 - Type-safe JavaScript
-- [Tailwind CSS](https://tailwindcss.com/) v4.0.17 - Utility-first CSS framework
+## 2. Project Description
 
-## Prerequisites
+Flashcard AI App is a web application designed to help users efficiently create and learn educational flashcards. The main goal of the application is to automate the flashcard creation process using artificial intelligence (AI), significantly reducing the time needed for their preparation compared to manual methods. The application is aimed at students and working professionals who are learning a new language and want to use the spaced repetition method for more effective memorization. The key benefit for the user is time saving and access to an effective learning method.
 
-- Node.js v22.14.0 (as specified in `.nvmrc`)
-- npm (comes with Node.js)
+## 3. Tech Stack
 
-## Getting Started
+### Frontend
+*   **Astro 5:** Utilized for building fast, content-focused websites with its modern static-first architecture, minimizing JavaScript by default.
+*   **React 19:** Incorporated for developing interactive user interface components where dynamic client-side rendering is necessary.
+*   **TypeScript 5:** Employed for static typing throughout the project, enhancing code quality, maintainability, and developer experience with better IDE support.
+*   **Tailwind CSS 4:** A utility-first CSS framework used for rapid and consistent styling of the application.
+*   **Shadcn/ui:** Provides a library of accessible and well-crafted React components that serve as the foundation for the user interface.
 
-1. Clone the repository:
+### Backend
+*   **Supabase:** A comprehensive open-source backend-as-a-service solution, providing:
+    *   **PostgreSQL Database:** Robust and scalable SQL database.
+    *   **Authentication:** Built-in user authentication and management.
+    *   **APIs:** Instant and customizable APIs for data access.
+    *   *(Other Supabase features like Realtime, Storage can be listed if used)*
 
-```bash
-git clone https://github.com/przeprogramowani/10x-astro-starter.git
-cd 10x-astro-starter
-```
+### AI Integration
+*   **Openrouter.ai:** Serves as the gateway to a diverse range of Large Language Models (LLMs), including those from OpenAI, Anthropic, Google, and others. This allows for flexible selection of models to balance performance, cost, and specific AI task requirements.
 
-2. Install dependencies:
+### Development & Deployment
+*   **Node.js:** Version `22.14.0` (as specified in the `.nvmrc` file, ensuring a consistent development environment).
+*   **GitHub Actions:** Used for setting up Continuous Integration and Continuous Deployment (CI/CD) pipelines to automate testing and deployment processes.
+*   **DigitalOcean:** The target platform for hosting the application, likely deployed using a Docker container image.
 
-```bash
-npm install
-```
+## 4. Getting Started Locally
 
-3. Run the development server:
+To set up and run the project on your local machine, follow these steps:
 
-```bash
-npm run dev
-```
+1.  **Clone the Repository:**
+    ```bash
+    git clone <your-repository-url>
+    cd 10x-astro-ai-training
+    ```
+    *(Replace `<your-repository-url>` with the actual URL of the GitHub repository.)*
 
-4. Build for production:
+2.  **Install Node.js:**
+    Ensure you have Node.js version `22.14.0` installed. It is highly recommended to use a Node Version Manager like `nvm`:
+    ```bash
+    nvm install 22.14.0
+    nvm use 22.14.0
+    ```
+    If you don't have `nvm`, you can install it from [here](https://github.com/nvm-sh/nvm).
 
-```bash
-npm run build
-```
+3.  **Install Project Dependencies:**
+    Navigate to the project root directory and run:
+    ```bash
+    npm install
+    ```
 
-## Available Scripts
+4.  **Set Up Environment Variables:**
+    Create a `.env` file in the root of the project by copying the example file if one exists (e.g., `.env.example`). Populate it with the necessary API keys and configuration details for services like Supabase and Openrouter.ai.
+    ```env
+    # Example .env content:
+    # SUPABASE_URL=your_supabase_project_url
+    # SUPABASE_ANON_KEY=your_supabase_anon_key
+    # OPENROUTER_API_KEY=your_openrouter_api_key
+    # OTHER_VARIABLES=...
+    ```
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Fix ESLint issues
+5.  **Run the Development Server:**
+    ```bash
+    npm run dev
+    ```
+    The application should now be accessible at `http://localhost:4321` (or another port if configured differently by Astro).
 
-## Project Structure
+## 5. Available Scripts
 
-```md
-.
-├── src/
-│   ├── layouts/    # Astro layouts
-│   ├── pages/      # Astro pages
-│   │   └── api/    # API endpoints
-│   ├── components/ # UI components (Astro & React)
-│   └── assets/     # Static assets
-├── public/         # Public assets
-```
+The `package.json` file defines the following scripts for common development tasks:
 
-## AI Development Support
+*   `npm run dev`
+    *   Starts the Astro development server with hot module reloading.
+*   `npm run build`
+    *   Builds the application for production, outputting to the `dist/` directory.
+*   `npm run preview`
+    *   Serves the production build locally to preview before deployment.
+*   `npm run astro ...`
+    *   Allows running Astro CLI commands directly.
+*   `npm run lint`
+    *   Runs ESLint to analyze the code for potential errors and style issues.
+*   `npm run lint:fix`
+    *   Runs ESLint and attempts to automatically fix any identified issues.
+*   `npm run format`
+    *   Formats the codebase using Prettier to ensure consistent code style.
 
-This project is configured with AI development tools to enhance the development experience, providing guidelines for:
+## 6. Project Scope
 
-- Project structure
-- Coding practices
-- Frontend development
-- Styling with Tailwind
-- Accessibility best practices
-- Astro and React guidelines
+The MVP (Minimum Viable Product) of the Flashcard AI App will include the following key functionalities:
 
-### Cursor IDE
+*   **AI-Powered Flashcard Generation (FR-001):** Users can generate flashcards by providing text (via copy-paste or file upload), which the AI will process into question/answer pairs.
+*   **Manual Flashcard Creation (FR-002):** Users can manually create their own flashcards with custom questions and answers.
+*   **Flashcard Management:**
+    *   Browse created flashcards (FR-003).
+    *   Edit existing flashcards (FR-004).
+    *   Delete flashcards (FR-005).
+*   **User Accounts (FR-006):** Basic user authentication (registration, login, logout) and secure data storage for individual flashcard collections.
+*   **Spaced Repetition System (FR-007):** Integration with a pre-built library to implement a spaced repetition learning algorithm.
+*   **Flashcard Typing (FR-008):** Distinction between AI-generated (`auto_generated`) and manually created (`manual`) flashcards.
+*   **AI Suggestion Workflow (FR-009, FR-010):** AI-generated flashcards will be presented as suggestions for user review, with options to accept and add them to their collection.
+*   **Input Validation (FR-011):** Validation for user inputs, such as text length for AI processing and form field formats.
 
-The project includes AI rules in `.cursor/rules/` directory that help Cursor IDE understand the project structure and provide better code suggestions.
+For a detailed list of user stories and out-of-scope features, please refer to the full Product Requirements Document (`prd.md`).
 
-### GitHub Copilot
+## 7. Project Status
 
-AI instructions for GitHub Copilot are available in `.github/copilot-instructions.md`
+*   **Current Version:** `0.0.1` (as per `package.json`)
+*   **Development Stage:** In Development
 
-### Windsurf
+*(This section can be updated as the project progresses, e.g., Alpha, Beta, Released.)*
 
-The `.windsurfrules` file contains AI configuration for Windsurf.
+## 8. License
 
-## Contributing
+This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
 
-Please follow the AI guidelines and coding practices defined in the AI configuration files when contributing to this project.
-
-## License
-
-MIT
+*(Please ensure a `LICENSE.md` file with the MIT License text (or your chosen license) exists in the root of the project. If not, you should create one.)*
