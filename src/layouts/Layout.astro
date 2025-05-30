@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { UserNav } from "../components/ui/UserNav";
 
 interface Props {
   title?: string;
@@ -18,7 +19,15 @@ const { title = "10x Astro Starter" } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <nav class="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="/" class="text-xl font-bold">10x Astro App</a>
+        <UserNav client:load />
+      </div>
+    </nav>
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
 

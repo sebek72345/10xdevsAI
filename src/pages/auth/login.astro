@@ -1,0 +1,13 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { AuthForm } from "../../components/auth/AuthForm";
+---
+
+<Layout title="Logowanie">
+  <div class="min-h-screen flex items-center justify-center bg-background p-4">
+    <div class="w-full max-w-md">
+      <AuthForm mode="signin" client:load />
+    </div>
+  </div>
+</Layout>
+
